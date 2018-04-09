@@ -1,42 +1,52 @@
-<div class="roomName">
-  <p>RECOVERY ROOM</p>
-</div>
-
-<div class="description">
-  <p>You are awake in the recovery room. You are dioriented and dazed. There is a locker in the corner</p>
-</div>
-
-<div class="options">
-  <div class="">
-    <p>if !move & !interact</p>
+<div class="display card">
+  <div class="display-top row">
+    <p>RECOVERY ROOM</p>
   </div>
-  <div class="move">
-     <ul>
-       <li>up</li>
-       <li>down</li>
-       <li>left</li>
-       <li>right</li>
-       <li>stay here ()</li>
-     </ul>
+
+  <div class="display-mid row">
+      <p class="display-text">All around you is a darkness so complete that it could only make sense to a being that has never known what eyes are. And yet you are aware of everything, and everything is full of wonders. And everything is full of terrors. You awaken to searing light and an unfamiliar voice.\"Hey there! I'm Jonesy, and in case you'vr forgotten you're player. You're onboard the ECS Miskatonic heading for ... your new home. You've been in solid stasis for a really long time, and I can tell that you're super dehydrated. There's a water bottle around here somewherer. My helpers on this section of the ship seem to be...missing? Or else I'd get it for you myself.\" As Jonsey talks, your dream begins to fade a bit, and you remember yourself to be a beign with legs and feet. You slowly swing these newly remembered apendages off of the recovery bed that you're on and get to the important business of remembering how to stand. \"This is one of the modules where my sensors are acting a little wokny lately. But I'm pretty sure that if you look around yo'll find water.
+      </p>
   </div>
-  <div class="interact">
-    <p>things that change the database</p>
-    <ul>
-      <li>option a</li>
-      <li>option b (look at locker)</li>
-      <li>
-        <ul>
-          <li>ngIf screwdriver has not been picked up (item set to true)</li>
-          <li>sub-option b (pick up screwdirver)</li>
-          <li>ngIf screwdriver has  been picked up (item is true)</li>
-          <li>sub-option b (the locker is empty)</li>
-        </ul>
-      </li>
-      <li>option c</li>
-    </ul>
-    <p>Look around (changes the text in description)</p>
+
+  <div class="display-bot row">
+    <div class="col-sm-3 card">
+      <app-player></app-player>
+    </div>
+    <div class="col-sm-6 card">
+      <div class="options">
+        <div class="">
+          <p>if !move & !interact</p>
+        </div>
+        <div class="move">
+          <ul>
+            <li>up</li>
+            <li>down</li>
+            <li>left</li>
+            <li>right</li>
+            <li>stay here ()</li>
+          </ul>
+        </div>
+        <div class="interact">
+          <p>things that change the database</p>
+          <ul>
+            <li>option a</li>
+            <li>option b (look at locker)</li>
+            <li>
+              <ul>
+                <li>ngIf screwdriver has not been picked up (item set to true)</li>
+                <li>sub-option b (pick up screwdirver)</li>
+                <li>ngIf screwdriver has  been picked up (item is true)</li>
+                <li>sub-option b (the locker is empty)</li>
+              </ul>
+            </li>
+            <li>option c</li>
+          </ul>
+          <p>Look around (changes the text in description)</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 card">
+      <app-log></app-log>
+    </div>
   </div>
 </div>
-
-<app-player></app-player>
-<app-log></app-log>

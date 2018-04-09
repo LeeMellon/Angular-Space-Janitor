@@ -1,0 +1,82 @@
+{
+  "rooms" : {
+    "0" : {
+      "name" : "recovery",
+      "scene" : {
+        "a" : {
+          "actionOptions" : {
+            "a" : {
+              "log" : "wakes up",
+              "option" : "Look around the room",
+              "text" : "You fight through a disorientation so string that it makes the world feel like jelly,but somehow you manage to find a machine that dispenses water in silver bags. You drink one, vomit immiediately, and then drink another. After a few moments you feel a little better."
+            },
+            "b" : {
+              "option" : "Ask Jonsey how long you've been in stasis.",
+              "text" : "It takes you a second but you eventually remember that there are languages out there and that you know at least one. You manage to assemble the complex question of time and exsistance into sound. \"How long?\" Again, Jonsey's reply sems to come after a pause. \"Well, definietly a long time. But you knew that right? If you've found that water I suggest you head to one of the terminals in the staff lounge and I'll explain everything there.\""
+            },
+            "c" : {
+              "option" : "Leave the room",
+              "text" : "You search around for a door and find one in front of you, one to you left and one to your right."
+            }
+          },
+          "items" : "water bottle",
+          "moveOptions" : {
+            "a" : {
+              "log" : "has left the recovery room",
+              "option" : "An unmarked door",
+              "text" : "you make your way towards the door which opens onto a dark halway"
+            },
+            "b" : {
+              "option" : "A door marked ICU",
+              "text" : "You try and open the door labeled ICU but it appears to be locked."
+            },
+            "c" : {
+              "option" : "A door marked Showers",
+              "text" : "On the other side of the door is a room made from ceramic tiles. There is little else that you can see here."
+            }
+          },
+          "text" : "All around you is a darkness so complete that it could only make sense to a being that has never known what eyes are. And yet you are aware of everything, and everything is full of wonders. And everything is full of terrors. You awaken to searing light and an unfamiliar voice.\"Hey there! I'm Jonesy, and in case you'vr forgotten you're {{player.name}}. You're onboard the ECS Miskatonic heading for ... your new home. You've been in solid stasis for a really long time, and I can tell that you're super dehydrated. There's a water bottle around here somewherer. My helpers on this section of the ship seem to be...missing? Or else I'd get it for you myself.\" As Jonsey talks, your dream begins to fade a bit, and you remember yourself to be a beign with legs and feet. You slowly swing these newly remembered apendages off of the recovery bed that you're on and get to the important business of remembering how to stand. \"This is one of the modules where my sensors are acting a little wokny lately. But I'm pretty sure that if you look around yo'll find water.\""
+        }
+      }
+    },
+    "1" : {
+      "name" : "recovery",
+      "scene" : {
+        "a" : {
+          "actionOptions" : {
+            "a" : {
+              "log" : "wakes up",
+              "option" : "Look around the room",
+              "text" : "You fight through a disorientation so string that it makes the world feel like jelly,but somehow you manage to find a machine that dispenses water in silver bags. You drink one, vomit immiediately, and then drink another. After a few moments you feel a little better."
+            },
+            "b" : {
+              "option" : "Ask Jonsey how long you've been in stasis.",
+              "text" : "It takes you a second but you eventually remember that there are languages out there and that you know at least one. You manage to assemble the complex question of time and exsistance into sound. \"How long?\" Again, Jonsey's reply sems to come after a pause. \"Well, definietly a long time. But you knew that right? If you've found that water I suggest you head to one of the terminals in the staff lounge and I'll explain everything there.\""
+            },
+            "c" : {
+              "option" : "Leave the room",
+              "text" : "You search around for a door and find one in front of you, one to you left and one to your right."
+            }
+          },
+          "items" : "water bottle",
+          "moveOptions" : {
+            "a" : {
+              "log" : "has left the recovery room",
+              "option" : "An unmarked door",
+              "text" : "you make your way towards the door which opens onto a dark halway"
+            },
+            "b" : {
+              "option" : "A door marked ICU",
+              "text" : "You try and open the door labeled ICU but it appears to be locked."
+            },
+            "c" : {
+              "option" : "A door marked Showers",
+              "text" : "On the other side of the door is a room made from ceramic tiles. There is little else that you can see here."
+            }
+          },
+          "text" : "All around you is a darkness so complete that it could only make sense to a being that has never known what eyes are. And yet you are aware of everything, and everything is full of wonders. And everything is full of terrors. You awaken to searing light and an unfamiliar voice.\"Hey there! I'm Jonesy, and in case you'vr forgotten you're {{player.name}}. You're onboard the ECS Miskatonic heading for ... your new home. You've been in solid stasis for a really long time, and I can tell that you're super dehydrated. There's a water bottle around here somewherer. My helpers on this section of the ship seem to be...missing? Or else I'd get it for you myself.\" As Jonsey talks, your dream begins to fade a bit, and you remember yourself to be a beign with legs and feet. You slowly swing these newly remembered apendages off of the recovery bed that you're on and get to the important business of remembering how to stand. \"This is one of the modules where my sensors are acting a little wokny lately. But I'm pretty sure that if you look around yo'll find water.\""
+        }
+      }
+    }
+  }
+}

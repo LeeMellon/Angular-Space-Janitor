@@ -1,0 +1,23 @@
+.display {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.display-text {
+  padding: 20px;
+}
+
+.display-top {
+  padding-top: 5%;
+  min-height: 10vh;
+  margin: 0 auto;
+}
+
+.display-mid {
+  min-height: 40vh;
+
+}
+
+.display-bot {
+  min-height: 20vh;
+}
