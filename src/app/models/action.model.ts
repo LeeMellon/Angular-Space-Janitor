@@ -3,5 +3,5 @@ export class Action {
   constructor(
     option: string,
     text: string
-  )
+  ){}
 }
