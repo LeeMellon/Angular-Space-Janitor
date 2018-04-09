@@ -5,13 +5,12 @@ import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-
 import { AppComponent } from './app.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { Room000Component } from './room000/room000.component';
 import { LogComponent } from './log/log.component';
 import { PlayerComponent } from './player/player.component';
-import { GameComponent } from './game/game.component';
+import { TestDatabaseComponent } from './test-database/test-database.component';
 
 
 export const firebaseConfig = {
@@ -28,13 +27,13 @@ export const firebaseConfig = {
     Room000Component,
     LogComponent,
     PlayerComponent,
-    GameComponent
+    TestDatabaseComponent
   ],
   imports: [
     BrowserModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

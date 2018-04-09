@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Room } from '../models/room.model';
-// import { Room } from '../models/room.model'
+
 
 @Injectable()
 export class RoomService {
@@ -15,5 +15,6 @@ export class RoomService {
    getRooms() {
      return this.rooms;
    }
+
 
 }
