@@ -1,52 +1,51 @@
-<div class="display card">
-  <div class="display-top row">
-    <p>RECOVERY ROOM</p>
-  </div>
+<div *ngFor='let room of rooms'>
+  <div class="display card">
 
-  <div class="display-mid row">
-      <p class="display-text">All around you is a darkness so complete that it could only make sense to a being that has never known what eyes are. And yet you are aware of everything, and everything is full of wonders. And everything is full of terrors. You awaken to searing light and an unfamiliar voice.\"Hey there! I'm Jonesy, and in case you'vr forgotten you're player. You're onboard the ECS Miskatonic heading for ... your new home. You've been in solid stasis for a really long time, and I can tell that you're super dehydrated. There's a water bottle around here somewherer. My helpers on this section of the ship seem to be...missing? Or else I'd get it for you myself.\" As Jonsey talks, your dream begins to fade a bit, and you remember yourself to be a beign with legs and feet. You slowly swing these newly remembered apendages off of the recovery bed that you're on and get to the important business of remembering how to stand. \"This is one of the modules where my sensors are acting a little wokny lately. But I'm pretty sure that if you look around yo'll find water.
-      </p>
-  </div>
-
-  <div class="display-bot row">
-    <div class="col-sm-3 card">
-      <app-player></app-player>
-    </div>
-    <div class="col-sm-6 card">
-      <div class="options">
-        <div class="">
-          <p>if !move & !interact</p>
-        </div>
-        <div class="move">
-          <ul>
-            <li>up</li>
-            <li>down</li>
-            <li>left</li>
-            <li>right</li>
-            <li>stay here ()</li>
-          </ul>
-        </div>
-        <div class="interact">
-          <p>things that change the database</p>
-          <ul>
-            <li>option a</li>
-            <li>option b (look at locker)</li>
-            <li>
-              <ul>
-                <li>ngIf screwdriver has not been picked up (item set to true)</li>
-                <li>sub-option b (pick up screwdirver)</li>
-                <li>ngIf screwdriver has  been picked up (item is true)</li>
-                <li>sub-option b (the locker is empty)</li>
-              </ul>
-            </li>
-            <li>option c</li>
-          </ul>
-          <p>Look around (changes the text in description)</p>
-        </div>
+    <div class="display-top row">
+      <div *ngIf="room.name === currentRoom">
+        {{room.name}}
       </div>
     </div>
-    <div class="col-sm-3 card">
-      <app-log></app-log>
+
+    <div class="display-mid row">
+      <div *ngIf="room.name === currentRoom">
+        <p class="display-text">
+          {{room.scene[0].text}}
+        </p>
+      </div>
     </div>
+
+    <div class="display-bot row">
+      <div class="col-sm-3 card">
+        <app-player></app-player>
+      </div>
+      <div class="col-sm-6 card">
+        <div *ngIf="room.name === currentRoom">
+          <div *ngFor='let scene of scenes'>
+            <div class="options">
+              <div *ngIf="move" class="move">
+                <ul>
+                  <li>{{scene.moveOption[0].option}}</li>
+                  <li>{{scene.moveOption[1].option}}</li>
+                  <li>{{scene.moveOption[2].option}}</li>
+                  <!-- <li>{{room.scene[0].moveOption[3].option}}</li> -->
+                </ul>
+              </div>
+              <div *ngIf="!move" class="interact">
+                <ul>
+                  <li>{{scene.actionOption[0].option}}</li>
+                  <li>{{scene.actionOption[1].option}}</li>
+                  <li (click)="moveOptions()">{{room.scene[0].actionOption[2].option}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 card">
+        <app-log></app-log>
+      </div>
+    </div>
+
   </div>
 </div>
