@@ -29,16 +29,16 @@
                 <ul>
                   <li (click)="changeRoom(0)">{{roomToDisplay?.scene[0]?.moveOption[0]?.option}}</li>
                   <li (click)="changeRoom(1)">{{roomToDisplay?.scene[0]?.moveOption[1]?.option}}</li>
-                  <li (click)="changeRoom(2)">{{roomToDisplay?.scene[0].moveOption[2]?.option}}</li>
+                  <li (click)="changeRoom(2)">{{roomToDisplay?.scene[0]?.moveOption[2]?.option}}</li>
                   <li (click)="changeRoom(3)">{{roomToDisplay?.scene[0]?.moveOption[3]?.option}}</li>
                 </ul>
               <!-- </div> -->
               <!-- <div *ngIf="!move" class="interact"> -->
-                <!-- <ul>
-                  <li>{{roomToDisplay?.scene.actionOption[0]?.option}}</li>
-                  <li>{{roomToDisplay?.scene.actionOption[1]?.option}}</li>
+                <ul>
+                  <li>{{roomToDisplay?.scene[0]?.actionOption[0]?.option}}</li>
+                  <li>{{roomToDisplay?.scene[1]?.actionOption[1]?.option}}</li>
                   <li (click)="moveOptions()">{{roomToDisplay?.scene[0].actionOption[2]?.option}}</li>
-                </ul> -->
+                </ul>
               <!-- </div> -->
             </div>
           <!-- </div> -->

@@ -30,7 +30,6 @@ export class Room000Component implements OnInit {
         this.roomId = urlParameters['dest'];
         console.log("roomID", this.roomId)
     });
-
     this.setRoomToDisplay();
   }
 
@@ -39,7 +38,6 @@ export class Room000Component implements OnInit {
     let destination = this.roomToDisplay.scene[0].moveOption[option].dest;
     this.router.navigate(['rooms', destination]);
     this.roomId = destination;
-
     this.setRoomToDisplay();
   }
 
