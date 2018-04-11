@@ -27,36 +27,19 @@ export class Room000Component implements OnInit {
     private roomService : RoomService
   ) { }
 
-  ngDoCheck() {
-    // this.router.navigate(['rooms', this.roomToDisplay.id]);
-    // this.roomToDisplay.id = urlParameters['dest'];
-  }
-
   ngOnInit() {
     this.rooms = this.roomService.getRooms();
-    // this.roomService.getRooms().subscribe(rooms=>{
-    //   this.rooms = rooms
-    //   this.rooms.forEach(function(room){
-    //     console.log(room.scene)
-    //     })
-    //   // console.log(this.rooms)
-    //   this.currentRoom = "Recovery";
-    //   this.currentScene
       this.route.params.forEach((urlParameters) => {
         this.roomId = urlParameters['dest'];
         console.log("roomID", this.roomId)
     });
-    // this.roomToDisplay = this.roomService.getRoomById(this.roomId);
-    // console.log("Room", this.roomToDisplay);
 
     this.roomService.getRooms().subscribe(rooms =>{
       this.rooms = rooms;
     for(let i = 0; i < 31; i ++){
-      // console.log(this.rooms[i].id)
       if(this.rooms[i].id === this.roomId){
         this.roomToDisplay = this.rooms[i]
         console.log(this.roomToDisplay)
-
       }
     }
    })
@@ -68,7 +51,6 @@ export class Room000Component implements OnInit {
     this.router.navigate(['rooms', destination]);
     this.roomId = destination;
 
-    // console.log(id);
     this.roomService.getRooms().subscribe(rooms =>{
       this.rooms = rooms;
     for(let i = 0; i < 31; i ++){
@@ -77,13 +59,10 @@ export class Room000Component implements OnInit {
       }
     }
    })
-   console.log("inside change room",this.roomToDisplay)
-
   }
 
   moveOptions(){
     this.move = true;
   }
-
 
 }
