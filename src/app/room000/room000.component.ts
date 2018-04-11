@@ -63,8 +63,8 @@ export class Room000Component implements OnInit {
   }
 
   changeRoom(option){
-    console.log("dest",this.roomToDisplay.scene[0].moveOption[0].dest);
-    let destination = this.roomToDisplay.scene[0].moveOption[0].dest;
+    console.log("dest",this.roomToDisplay.scene[0].moveOption[option].dest);
+    let destination = this.roomToDisplay.scene[0].moveOption[option].dest;
     this.router.navigate(['rooms', destination]);
     this.roomId = destination;
 
