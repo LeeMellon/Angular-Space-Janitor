@@ -11,7 +11,7 @@ const appRoutes: Routes = [
   component: FrontPageComponent
   },
   {
-  path: 'room000',
+  path: 'rooms/:dest',
   component: Room000Component
   }
 ];

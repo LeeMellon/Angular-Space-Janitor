@@ -16,5 +16,23 @@ export class RoomService {
      return this.rooms;
    }
 
+  //  getRoomById(roomId: string){
+  //   //  let target = null;
+  //   // this.rooms.forEach(function(room){
+  //   console.log(this.rooms)
+  //
+  //     for (var i = 0; i < 31; i++) {
+  //       if (this.rooms[i].id === roomId) {
+  //         let target = this.rooms[i]
+  //       }
+  //       console.log(target)
+  //       return  target;
+  //     }
+  //
+  //   // })
+  //   // console.log("list" , this.rooms);
+  //   // return this.database.object('rooms/' + id);
+  // }
+
 
 }

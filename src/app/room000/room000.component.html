@@ -1,4 +1,5 @@
-<div *ngFor='let room of rooms'>
+{{roomToDisplay?.name}}
+<!-- <div *ngFor='let room of rooms'>
   <div class="display card">
 
     <div class="display-top row">
@@ -16,19 +17,19 @@
     </div>
 
     <div class="display-bot row">
-      <div class="col-sm-3 card">
+      <div class="col-sm-3 card"> -->
         <app-player></app-player>
-      </div>
+      <!-- </div>
       <div class="col-sm-6 card">
         <div *ngIf="room.name === currentRoom">
           <div *ngFor='let scene of scenes'>
             <div class="options">
               <div *ngIf="move" class="move">
                 <ul>
-                  <li>{{scene.moveOption[0].option}}</li>
-                  <li>{{scene.moveOption[1].option}}</li>
-                  <li>{{scene.moveOption[2].option}}</li>
-                  <!-- <li>{{room.scene[0].moveOption[3].option}}</li> -->
+                  <li>{{room.scene[0].moveOption[0].option}}</li>
+                  <li>{{room.scene[0].moveOption[1].option}}</li>
+                  <li (click)="changeRoom(room)">{{room.scene[0].moveOption[2].option}}</li>
+                  <li>{{room.scene[0].moveOption[3].option}}</li>
                 </ul>
               </div>
               <div *ngIf="!move" class="interact">
@@ -42,10 +43,10 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-3 card">
+      <div class="col-sm-3 card"> -->
         <app-log></app-log>
-      </div>
+      <!-- </div>
     </div>
 
   </div>
-</div>
+</div> -->
