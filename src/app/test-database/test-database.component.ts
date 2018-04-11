@@ -20,12 +20,12 @@ export class TestDatabaseComponent implements OnInit {
   //   })
   // }
 
-  // ngOnInit() {
-  //   this.roomService.getRooms().subscribe(rooms=>{
-  //     this.room = rooms
-  //     this.room = Array.of(this.room[0])
-  //     console.log(this.room)
-  //   })
-  // }
+  ngOnInit() {
+    this.roomService.getRooms().subscribe(rooms=>{
+      this.room = rooms
+      this.room = Array.of(this.room[0])
+      console.log(this.room)
+    })
+  }
 
 }

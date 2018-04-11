@@ -27,6 +27,11 @@ export class Room000Component implements OnInit {
     private roomService : RoomService
   ) { }
 
+  ngDoCheck() {
+    // this.router.navigate(['rooms', this.roomToDisplay.id]);
+    // this.roomToDisplay.id = urlParameters['dest'];
+  }
+
   ngOnInit() {
     this.rooms = this.roomService.getRooms();
     // this.roomService.getRooms().subscribe(rooms=>{
@@ -57,33 +62,18 @@ export class Room000Component implements OnInit {
    })
   }
 
-  // ngOnChange() {
-  //   this.roomService.getRooms().subscribe(rooms =>{
-  //     this.rooms = rooms;
-  //   for(let i = 0; i < 31; i ++){
-  //     // console.log(this.rooms[i].id)
-  //     if(this.rooms[i].id === this.roomId){
-  //       this.roomToDisplay = this.rooms[i]
-  //       console.log(this.roomToDisplay)
-  //
-  //     }
-  //   }
-  //  })
-  // }
-
   changeRoom(option){
     console.log("dest",this.roomToDisplay.scene[0].moveOption[0].dest);
     let destination = this.roomToDisplay.scene[0].moveOption[0].dest;
-    this.router.navigate(['rooms', destination])
+    this.router.navigate(['rooms', destination]);
+    this.roomId = destination;
 
     // console.log(id);
     this.roomService.getRooms().subscribe(rooms =>{
       this.rooms = rooms;
     for(let i = 0; i < 31; i ++){
-      // console.log(this.rooms[i].id)
       if(this.rooms[i].id === this.roomId){
         this.roomToDisplay = this.rooms[i]
-
       }
     }
    })

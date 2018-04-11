@@ -4,3 +4,4 @@ export class Action {
     option: string,
     text: string
   ){}
+}
