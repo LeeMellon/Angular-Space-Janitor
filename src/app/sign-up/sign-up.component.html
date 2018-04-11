@@ -2,10 +2,12 @@
   <div class="createAccount">
     <p>Username</p>
     <input #createUser type="text" name="" value="">
-    <p><span *ngIf="errorCode"></span></p>
+    <p><span *ngIf="usernameError">enter a valid username</span></p>
+    
     <p>Password</p>
     <input #createPass type="text" name="" value="">
-    <p>{{errorMessage}}</p>
+    <p class="error-message"><span *ngIf="passError">password must be longer than 6 characters</span></p>
+
 
     <div class="submit">
       <button class="submit-button" (click)="createAccount(createUser.value, createPass.value)">Create new account</button>

@@ -21,20 +21,12 @@ export class PlayerService {
     this.user = afAuth.authState;
    }
 
-  createAccount(email, password){
+  createAccount(username, email, password){
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then( response => {
       console.log("RESPONSE: " + response.uid);
-      this.addPlayer(response.uid, response.email);
+      this.addPlayer(response.uid, username);
     })
-    // .catch( (err: firebase.FirebaseError) => {
-    //   // Give your error the firebase.FirebaseError type and
-    //   // you'll have access to all the FirebaseError properties
-    //   console.log(`code`, err.code);
-    //   console.log(`this error`, err.message)
-    //   console.log(`name`, err.name);
-    //   console.log(`stack`, err.stack);
-    // });
   }
 
   loginEmail(email, password){
@@ -58,9 +50,9 @@ export class PlayerService {
   }
 
   addPlayer(uid, username) {
-    var player = new Player(uid, username);
-    console.log("player push");
-    this.players.push(player);
+    let newPlayer = new Player(uid, username);
+    console.log(newPlayer.username);
+    this.players.push(newPlayer);
   }
 
   getPlayers() {

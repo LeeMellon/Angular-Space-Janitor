@@ -1,6 +1,6 @@
 export class Player {
   constructor(
-    uid: string,
-    username: string,
+    public uid: string,
+    public username: string,
   ){}
 }

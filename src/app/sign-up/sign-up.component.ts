@@ -13,7 +13,8 @@ import * as firebase from 'firebase/app';
     providers: [PlayerService]
 })
 export class SignUpComponent implements OnInit {
-  errorCode;
+  passError = false;
+  usernameError = false;
   errorMessage;
 
   constructor(
@@ -28,7 +29,22 @@ export class SignUpComponent implements OnInit {
 
   createAccount(account, password){
     let email = account + "@spacejanitor.com"
-    this.playerService.createAccount(email, password)
+    if (password.length < 6 && account.length < 1) {
+      this.passError = true;
+      this.usernameError = true;
+    }
+    else if (password.length < 6){
+      this.passError = true;
+    }
+    else if (account.length < 1){
+      this.usernameError = true;
+    }
+    else if (password.length > 5 && account.length > 0) {
+      this.usernameError = false;
+      this.passError = false;
+      this.playerService.createAccount(account, email, password)
+      this.router.navigate(['login']);
+    }
   }
 
 }
