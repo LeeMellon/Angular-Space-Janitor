@@ -28,13 +28,13 @@ export const firebaseConfig = {
     PlayerComponent,
     TestDatabaseComponent,
     Room000Component,
-  
+
   ],
   imports: [
     BrowserModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
