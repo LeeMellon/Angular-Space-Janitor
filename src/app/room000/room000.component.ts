@@ -15,9 +15,6 @@ export class Room000Component implements OnInit {
   roomId: string;
   roomToDisplay;
   rooms;
-  scenes;
-  currentRoom;
-  currentScene;
   move = false;
 
   constructor(
@@ -34,15 +31,7 @@ export class Room000Component implements OnInit {
         console.log("roomID", this.roomId)
     });
 
-    this.roomService.getRooms().subscribe(rooms =>{
-      this.rooms = rooms;
-    for(let i = 0; i < 31; i ++){
-      if(this.rooms[i].id === this.roomId){
-        this.roomToDisplay = this.rooms[i]
-        console.log(this.roomToDisplay)
-      }
-    }
-   })
+    this.setRoomToDisplay();
   }
 
   changeRoom(option){
@@ -51,14 +40,18 @@ export class Room000Component implements OnInit {
     this.router.navigate(['rooms', destination]);
     this.roomId = destination;
 
+    this.setRoomToDisplay();
+  }
+
+  setRoomToDisplay() {
     this.roomService.getRooms().subscribe(rooms =>{
       this.rooms = rooms;
     for(let i = 0; i < 31; i ++){
       if(this.rooms[i].id === this.roomId){
         this.roomToDisplay = this.rooms[i]
+        }
       }
-    }
-   })
+    });
   }
 
   moveOptions(){
