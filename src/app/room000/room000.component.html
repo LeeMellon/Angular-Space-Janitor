@@ -1,52 +1,53 @@
 {{roomToDisplay?.name}}
-<!-- <div *ngFor='let room of rooms'>
+{{roomToDisplay?.id}}
+<!-- <div *ngFor='let room of rooms'> -->
   <div class="display card">
 
     <div class="display-top row">
-      <div *ngIf="room.name === currentRoom">
-        {{room.name}}
-      </div>
+      <!-- <div *ngIf="room.name === currentRoom"> -->
+        {{roomToDisplay?.name}}
+      <!-- </div> -->
     </div>
 
     <div class="display-mid row">
-      <div *ngIf="room.name === currentRoom">
+      <!-- <div *ngIf="room.name === currentRoom"> -->
         <p class="display-text">
-          {{room.scene[0].text}}
+          {{roomToDisplay?.scene[0].text}}
         </p>
-      </div>
+      <!-- </div> -->
     </div>
 
     <div class="display-bot row">
-      <div class="col-sm-3 card"> -->
+      <div class="col-sm-3 card">
         <app-player></app-player>
-      <!-- </div>
-      <div class="col-sm-6 card">
-        <div *ngIf="room.name === currentRoom">
-          <div *ngFor='let scene of scenes'>
-            <div class="options">
-              <div *ngIf="move" class="move">
-                <ul>
-                  <li>{{room.scene[0].moveOption[0].option}}</li>
-                  <li>{{room.scene[0].moveOption[1].option}}</li>
-                  <li (click)="changeRoom(room)">{{room.scene[0].moveOption[2].option}}</li>
-                  <li>{{room.scene[0].moveOption[3].option}}</li>
-                </ul>
-              </div>
-              <div *ngIf="!move" class="interact">
-                <ul>
-                  <li>{{scene.actionOption[0].option}}</li>
-                  <li>{{scene.actionOption[1].option}}</li>
-                  <li (click)="moveOptions()">{{room.scene[0].actionOption[2].option}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="col-sm-3 card"> -->
+      <div class="col-sm-6 card">
+        <!-- <div *ngIf="room.name === currentRoom">
+          <div *ngFor='let scene of scenes'> -->
+            <div class="options">
+              <!-- <div *ngIf="move" class="move"> -->
+                <ul>
+                  <li (click)="changeRoom(0)">{{roomToDisplay?.scene[0]?.moveOption[0]?.option}}option</li>
+                  <li (click)="changeRoom(1)">{{roomToDisplay?.scene[0]?.moveOption[1]?.option}}</li>
+                  <li (click)="changeRoom(2)">{{roomToDisplay?.scene[0].moveOption[2]?.option}}</li>
+                  <li (click)="changeRoom(3)">{{roomToDisplay?.scene[0]?.moveOption[3]?.option}}</li>
+                </ul>
+              <!-- </div> -->
+              <!-- <div *ngIf="!move" class="interact"> -->
+                <!-- <ul>
+                  <li>{{roomToDisplay?.scene.actionOption[0]?.option}}</li>
+                  <li>{{roomToDisplay?.scene.actionOption[1]?.option}}</li>
+                  <li (click)="moveOptions()">{{roomToDisplay?.scene[0].actionOption[2]?.option}}</li>
+                </ul> -->
+              <!-- </div> -->
+            </div>
+          <!-- </div> -->
+        <!-- </div> -->
+      </div>
+      <div class="col-sm-3 card">
         <app-log></app-log>
-      <!-- </div>
-    </div>
+      </div>
+    <!-- </div>
 
   </div>
 </div> -->

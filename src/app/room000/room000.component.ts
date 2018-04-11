@@ -39,7 +39,7 @@ export class Room000Component implements OnInit {
     //   this.currentScene
       this.route.params.forEach((urlParameters) => {
         this.roomId = urlParameters['dest'];
-        console.log("roomID", this.rooms.id)
+        console.log("roomID", this.roomId)
     });
     // this.roomToDisplay = this.roomService.getRoomById(this.roomId);
     // console.log("Room", this.roomToDisplay);
@@ -57,12 +57,38 @@ export class Room000Component implements OnInit {
    })
   }
 
-  changeRoom(room){
-    console.log(room.scene.moveOption[0].dest);
-    let destination =
-    this.router.navigate(['rooms'], roomId)
-    // this.roomId = id;
+  // ngOnChange() {
+  //   this.roomService.getRooms().subscribe(rooms =>{
+  //     this.rooms = rooms;
+  //   for(let i = 0; i < 31; i ++){
+  //     // console.log(this.rooms[i].id)
+  //     if(this.rooms[i].id === this.roomId){
+  //       this.roomToDisplay = this.rooms[i]
+  //       console.log(this.roomToDisplay)
+  //
+  //     }
+  //   }
+  //  })
+  // }
+
+  changeRoom(option){
+    console.log("dest",this.roomToDisplay.scene[0].moveOption[0].dest);
+    let destination = this.roomToDisplay.scene[0].moveOption[0].dest;
+    this.router.navigate(['rooms', destination])
+
     // console.log(id);
+    this.roomService.getRooms().subscribe(rooms =>{
+      this.rooms = rooms;
+    for(let i = 0; i < 31; i ++){
+      // console.log(this.rooms[i].id)
+      if(this.rooms[i].id === this.roomId){
+        this.roomToDisplay = this.rooms[i]
+
+      }
+    }
+   })
+   console.log("inside change room",this.roomToDisplay)
+
   }
 
   moveOptions(){
