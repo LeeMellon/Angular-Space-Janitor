@@ -1,0 +1,43 @@
+@font-face {
+font-family: "Space Cruiser";
+src: url("../../assets/fonts/SPACEC6P.eot");
+src:
+url("../../assets/fonts/SPACEC6P.woff") format("woff"),
+/*url("../../assets/fonts/Harabara.otf") format("opentype"),*/
+url("../../assets/fonts/SPACEC6P.svg#filename") format("svg");
+}
+
+.front-page {
+  background-image: url('https://i.warosu.org/data/tg/img/0404/80/1433815544195.jpg');
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+}
+
+.title {
+  padding-top: 10vh;
+  font-size: 15vh;
+  color: rgba(152, 5, 5, .4);
+  text-shadow: 3vh 2vh rgba(152, 5, 5, 1);
+  font-family: 'Space Cruiser', Arial, sans-serif;
+}
+
+.start {
+  font-family: 'Space Cruiser', Arial, sans-serif;
+  font-size: 5vh;
+  color: rgba(152, 5, 5, 1);
+}
+
+.start:hover {
+  color: rgba(72, 3, 3, 0.69);
+}
+
+.login {
+  font-family: 'Space Cruiser', Arial, sans-serif;
+  font-size: 5vh;
+  color: rgba(152, 5, 5, 1);
+}
+
+.login:hover {
+  color: rgba(72, 3, 3, 0.69);
+}

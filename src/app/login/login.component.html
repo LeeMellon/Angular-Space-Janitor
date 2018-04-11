@@ -1,0 +1,20 @@
+<div class="login-page">
+  <div class="login">
+    <p>Username</p>
+    <input #loginUser type="text" name="" value="" minlength=1>
+    <p>Password</p>
+    <input #loginPass type="text" placeholder="password" minlength=6>
+    <div class="submit">
+      <button class="submit-button" (click)="loginEmail(loginUser.value, loginPass.value)">Login</button>
+    </div>
+  </div>
+  <div class="createAccount">
+    <p>Username</p>
+    <input #createUser type="text" name="" value="">
+    <p>Password</p>
+    <input #createPass type="text" name="" value="">
+    <div class="submit">
+      <button class="submit-button" (click)="createAccount(createUser.value, createPass.value)">Create new account</button>
+    </div>
+  </div>
+</div>

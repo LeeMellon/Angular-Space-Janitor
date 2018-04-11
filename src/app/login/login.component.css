@@ -1,0 +1,17 @@
+.login-page {
+  text-align: center;
+  padding-top: 10vh;
+}
+
+.submit-button {
+  margin-top: 1vh;
+  background-color: #efefef;
+}
+
+.createAccount {
+  background-color: #ffafaf;
+}
+
+.login {
+  background-color: #afffaf;
+}

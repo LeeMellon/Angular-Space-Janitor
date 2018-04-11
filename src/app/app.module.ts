@@ -5,12 +5,14 @@ import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { LogComponent } from './log/log.component';
 import { PlayerComponent } from './player/player.component';
 import { TestDatabaseComponent } from './test-database/test-database.component';
 import { Room000Component } from './room000/room000.component';
+import { LoginComponent } from './login/login.component';
 
 
 export const firebaseConfig = {
@@ -28,7 +30,8 @@ export const firebaseConfig = {
     PlayerComponent,
     TestDatabaseComponent,
     Room000Component,
-  
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
