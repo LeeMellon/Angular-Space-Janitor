@@ -5,6 +5,7 @@ import { FrontPageComponent } from './front-page/front-page.component';
 import { LogComponent } from './log/log.component';
 import { PlayerComponent } from './player/player.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const appRoutes: Routes = [
   {
@@ -14,6 +15,10 @@ const appRoutes: Routes = [
   {
   path: 'login',
   component: LoginComponent
+  },
+  {
+  path: 'create',
+  component: SignUpComponent
   },
   {
   path: 'rooms/:dest',

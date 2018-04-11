@@ -1,0 +1,14 @@
+<div class="sign-up-page">
+  <div class="createAccount">
+    <p>Username</p>
+    <input #createUser type="text" name="" value="">
+    <p><span *ngIf="errorCode"></span></p>
+    <p>Password</p>
+    <input #createPass type="text" name="" value="">
+    <p>{{errorMessage}}</p>
+
+    <div class="submit">
+      <button class="submit-button" (click)="createAccount(createUser.value, createPass.value)">Create new account</button>
+    </div>
+  </div>
+</div>

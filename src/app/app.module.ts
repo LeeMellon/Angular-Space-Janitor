@@ -13,6 +13,7 @@ import { PlayerComponent } from './player/player.component';
 import { TestDatabaseComponent } from './test-database/test-database.component';
 import { Room000Component } from './room000/room000.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 export const firebaseConfig = {
@@ -31,6 +32,7 @@ export const firebaseConfig = {
     TestDatabaseComponent,
     Room000Component,
     LoginComponent,
+    SignUpComponent,
 
   ],
   imports: [

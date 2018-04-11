@@ -3,9 +3,11 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { Room } from '../models/room.model';
 
 
+
 @Injectable()
 export class RoomService {
   rooms: FirebaseListObservable<any[]>;
+
   roomList: Room[];
 
   constructor(private database: AngularFireDatabase) {
@@ -15,5 +17,7 @@ export class RoomService {
    getRooms() {
      return this.rooms;
    }
+
+
 
 }

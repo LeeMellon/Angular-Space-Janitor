@@ -4,14 +4,17 @@ import { Location } from '@angular/common';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { PlayerService } from '../services/player.service';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase/app';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css'],
     providers: [PlayerService]
 })
-export class LoginComponent implements OnInit {
+export class SignUpComponent implements OnInit {
+  errorCode;
+  errorMessage;
 
   constructor(
     private router: Router,
@@ -23,13 +26,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  loginEmail(account, password){
+  createAccount(account, password){
     let email = account + "@spacejanitor.com"
-    this.playerService.loginEmail(email, password);
-  }
-
-  logoutEmail() {
-    this.playerService.logoutEmail();
+    this.playerService.createAccount(email, password)
   }
 
 }
