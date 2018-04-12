@@ -72,18 +72,19 @@
   border-bottom-right-radius: 30%;
   border-bottom-left-radius: 30%;
   border-style: solid;
-  min-height: 20vh;
+  min-height: 25vh;
   background-color: rgba(55, 35, 35, 0.8);
   color: #FFD52D;
 }
 
 .optionDisplay {
   font-size: 1.4em;
-  margin-top: 10vh;
+  padding-top: 10vh;
   padding-left: 12vw;
   padding-right: 10vw;
   text-align: center;
-  padding-bottom: 30px;;
+  padding-bottom: 30px;
+  position: fixed;
 }
 
 .action-button {
