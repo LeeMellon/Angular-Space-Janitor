@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../services/player.service';
 import { Player } from '../models/player.model'
-import * as firebase from "firebase";
+import * as firebase from 'firebase';
+import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-player',
@@ -14,9 +17,12 @@ export class PlayerComponent implements OnInit {
   players;
   playerList;
 
-
-
-  constructor(private playerService : PlayerService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location,
+    private playerService : PlayerService
+  ) { }
 
   ngOnInit() {
     this.playerService.getPlayers().subscribe(response => {
@@ -32,6 +38,7 @@ export class PlayerComponent implements OnInit {
 
   logout() {
     this.playerService.logoutEmail();
+    this.router.navigate(['']);
   }
 
   getPlayerList() {
