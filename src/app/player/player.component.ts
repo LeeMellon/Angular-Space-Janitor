@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../services/player.service';
+import { Player } from '../models/player.model'
 import * as firebase from "firebase";
 
 @Component({
@@ -11,10 +12,18 @@ import * as firebase from "firebase";
 export class PlayerComponent implements OnInit {
   user;
   players;
+  playerList;
+
+
 
   constructor(private playerService : PlayerService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.playerService.getPlayers().subscribe(response => {
+      this.playerList = response
+      console.log(this.playerList);
+     })
+  }
 
   ngDoCheck() {
     this.user = firebase.auth().currentUser;
@@ -25,4 +34,7 @@ export class PlayerComponent implements OnInit {
     this.playerService.logoutEmail();
   }
 
+  getPlayerList() {
+
+  }
 }

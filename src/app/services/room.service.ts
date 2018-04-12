@@ -27,7 +27,6 @@ export class RoomService {
   }
 
   updateScene(key, value){
-    console.log("what the fuck are you doing?")
     this.scenes.update(key, {current: value});
   }
 }

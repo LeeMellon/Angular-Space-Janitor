@@ -1,5 +1,18 @@
-<p>
-  Hello!
-  <br>
-  {{user.uid}}
-</p>
+<div *ngFor="let player of players | async">
+  <div *ngIf="player.uid === user.uid">
+    <ul>
+      <li>{{player.username}}</li>
+      <li>{{player.uid}}</li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="!user">
+  <button routerLink="/login">login</button>
+</div>
+
+
+
+<div *ngIf="user">
+  <button (click)="logout()">logout</button>
+</div>
