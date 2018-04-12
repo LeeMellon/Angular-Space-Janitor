@@ -18,6 +18,7 @@ export class Room000Component implements OnInit {
   sceneToDisplay;
   scenes;
   move = false;
+  change;
 
   constructor(
     private router: Router,
@@ -30,19 +31,22 @@ export class Room000Component implements OnInit {
     this.rooms = this.roomService.getRooms();
       this.route.params.forEach((urlParameters) => {
         this.roomId = urlParameters['dest'];
-        console.log("roomID", this.roomId)
+    });
+    this.roomService.getScenes().subscribe(scenes => {
+      this.scenes = scenes;
     });
     this.setRoomToDisplay();
     this.setSceneToDisplay();
   }
 
   changeRoom(option){
-    console.log("dest",this.roomToDisplay.scene[0].moveOption[option].dest);
     let destination = this.roomToDisplay.scene[0].moveOption[option].dest;
-    this.router.navigate(['rooms', destination]);
-    this.roomId = destination;
-    this.setRoomToDisplay();
-    this.setSceneToDisplay();
+    if (destination !== "XXX") {
+      this.router.navigate(['rooms', destination]);
+      this.roomId = destination;
+      this.setRoomToDisplay();
+      this.setSceneToDisplay();
+    }
   }
 
   setRoomToDisplay() {
@@ -59,14 +63,28 @@ export class Room000Component implements OnInit {
   setSceneToDisplay() {
     this.roomService.getScenes().subscribe(scenes => {
       this.scenes = scenes;
-      this.roomService.getSceneById(this.roomToDisplay.id).subscribe(scene => {
+      let sceneId = this.roomToDisplay.id;
+      this.roomService.getSceneById(sceneId).subscribe(scene => {
         this.sceneToDisplay = scene;
       });
     });
   }
 
+  changeScene(scene) {
+    console.log("room number" , this.sceneToDisplay[1].$value)
+    console.log("scene number" , this.sceneToDisplay[0].$value)
+    if ((this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption) && ((this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].change) !== "XXX")){
+      let Id = this.sceneToDisplay[1].$value
+      this.roomService.updateScene(Id, scene);
+    }
+  }
+
   moveOptions(){
     this.move = true;
+  }
+
+  actionOptions(){
+    this.move=false;
   }
 
 }
