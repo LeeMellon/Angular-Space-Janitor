@@ -39,7 +39,7 @@
 
 1. ### Visit Deployed Website
 ```
-XXX-ENTER WEB ADDRESS HERE-XXX
+https://space-janitor.firebaseapp.com/
 ```
 
 2. ### Install and Host Locally
