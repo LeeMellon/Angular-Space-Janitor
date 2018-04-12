@@ -5,9 +5,11 @@
     </p>
   </div>
   <div class="start">
-    <p routerLink="rooms/030" name="button">start</p>
+    <div *ngIf="user != null">
+      <p routerLink="rooms/030" name="button">start</p>
+    </div>
   </div>
-  <div class="login">
+  <div *ngIf="user == null" class="login">
     <p routerLink="login">login</p>
   </div>
 </div>

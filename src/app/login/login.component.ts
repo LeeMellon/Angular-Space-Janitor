@@ -12,17 +12,28 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./login.component.css'],
     providers: [PlayerService]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   user;
+  private isLoggedIn: Boolean;
+  errorMessage;
+
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
     private playerService : PlayerService
-  ) { }
-
-  ngOnInit() {
+  ) {
+    this.playerService.user.subscribe(user => {
+      console.log(user);
+      if (user == null) {
+        this.isLoggedIn = false;
+        console.log("not logged in");
+      } else {
+        this.isLoggedIn = true;
+        console.log("logged in");
+      }
+    });
   }
 
   ngDoCheck() {
@@ -32,9 +43,13 @@ export class LoginComponent implements OnInit {
   loginEmail(account, password){
     let email = account + "@spacejanitor.com"
     this.playerService.loginEmail(email, password)
-    if (this.user) {
+    if (this.isLoggedIn) {
       this.router.navigate(['']);
     }
+  }
+
+  displayErrors(errorPassback) {
+    this.errorMessage = errorPassback;
   }
 
   logoutEmail() {
