@@ -1,6 +1,21 @@
 .display {
   padding-left: 10%;
   padding-right: 10%;
+  background-color: #666;
+
+  background-image: url('../../assets/imgs/hallway.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.display ul {
+  padding-left: 0px;
+}
+
+.display li {
+  list-style: none;
+  display: block;
 }
 
 .display-text {
@@ -11,13 +26,38 @@
   padding-top: 5%;
   min-height: 10vh;
   margin: 0 auto;
+  color: #FFD52D;
+  font-size: 2em;
 }
 
 .display-mid {
   min-height: 40vh;
+  font-size: 1.2em;
+  color: #FFD52D;
+  background-color: rgba(0, 0, 0, 0.8);
 
 }
 
 .display-bot {
+  border-style: solid;
   min-height: 20vh;
+  background-color: rgba(55, 35, 35, 0.8);
+  color: #FFD52D;
+}
+
+.optionDisplay {
+  font-size: 1.4em;
+  margin-top: 10vh;
+  padding-left: 12vw;
+  padding-right: 10vw;
+  text-align: center;
+}
+
+.action-button {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.option-card {
+  margin-top: 2vh;
 }
