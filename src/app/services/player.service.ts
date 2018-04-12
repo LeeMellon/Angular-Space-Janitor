@@ -10,6 +10,7 @@ import * as firebase from 'firebase/app';
 export class PlayerService {
   user: Observable<firebase.User>;
   players: FirebaseListObservable<any[]>
+  errorMessage;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -34,6 +35,10 @@ export class PlayerService {
       // you'll have access to all the FirebaseError properties
       console.log(`code`, err.code);
       console.log(`message`, err.message);
+      if(err.message) {
+        alert(err.message);
+      }
+      this.errorMessage = err.message
       console.log(`name`, err.name);
       console.log(`stack`, err.stack);
     })//XXX XXX XXX.then() can I use this here? XXX XXX XXX
