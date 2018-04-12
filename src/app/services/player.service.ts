@@ -11,8 +11,6 @@ export class PlayerService {
   user: Observable<firebase.User>;
   players: FirebaseListObservable<any[]>
 
-
-
   constructor(
     public afAuth: AngularFireAuth,
     private database: AngularFireDatabase
