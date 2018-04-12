@@ -30,7 +30,7 @@ export class RoomService {
     this.scenes.update(key, {current: value});
   }
 
-  getActionText(roomNumber, sceneNumber, actionNumber) {
-    return this.rooms[0].scene[0].actionOption[0].text
-  }
+  // getActionText(roomNumber, sceneNumber, actionNumber) {
+  //   return this.rooms[0].scene[0].actionOption[0].text
+  // }
 }
