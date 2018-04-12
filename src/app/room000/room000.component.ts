@@ -4,6 +4,9 @@ import { Location } from '@angular/common';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { RoomService } from '../services/room.service';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
+
+
 
 @Component({
   selector: 'app-room000',
@@ -19,6 +22,7 @@ export class Room000Component implements OnInit {
   sceneToDisplay;
   scenes;
   move = false;
+  actionText = false;
   change;
 
   constructor(
@@ -87,14 +91,25 @@ export class Room000Component implements OnInit {
       console.log("move option if")
       this.roomService.updateScene(Id, scene);
     }
+    this.actionText = true;
+    $('#actionTextDisplay').text(this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].text)
+    console.log(this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].text)
   }
 
-  moveOptions(){
+  moveOptions() {
     this.move = true;
   }
 
-  actionOptions(){
+  actionOptions() {
     this.move=false;
+  }
+
+  actionTextShow() {
+    if (this.actionText === false){
+      this.actionText = true;
+    } else {
+      this.actionText = false;
+    }
   }
 
 }

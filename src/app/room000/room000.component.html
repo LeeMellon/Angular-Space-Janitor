@@ -4,10 +4,22 @@
     {{roomToDisplay?.name}} | {{roomToDisplay?.id}}
   </div>
 
-  <div class="display-mid row">
-    <p class="display-text">
-      {{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.text}}
-    </p>
+  <div *ngIf="!actionText">
+    <div class="display-mid row">
+      <p class="display-text">
+        {{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.text}}
+      </p>
+    </div>
+  </div>
+  <div *ngIf="actionText">
+    <div class="display-mid row">
+      <div class="col-md-6">
+        <p id="actionTextDisplay">action text box</p>
+      </div>
+      <div class="col-md-6">
+        <p (click)="actionTextShow()">   continue</p><br>
+      </div>
+    </div>
   </div>
 
   <div class="display-bot row">
