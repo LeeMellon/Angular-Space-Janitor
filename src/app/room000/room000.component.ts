@@ -24,6 +24,7 @@ export class Room000Component implements OnInit {
   move = false;
   actionText = false;
   change;
+  innerText;
 
   constructor(
     private router: Router,
@@ -92,8 +93,10 @@ export class Room000Component implements OnInit {
       this.roomService.updateScene(Id, scene);
     }
     this.actionText = true;
-    let innerText = this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].text;
-    $('#actionTextDisplay').text(innerText)
+    // this.roomService.getActionText(0, 0, 0).subscribe(text => {
+    //   this.innerText = text;
+    // });
+    this.innerText = this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].text;
     console.log(this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].text)
   }
 

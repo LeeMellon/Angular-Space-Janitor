@@ -65,4 +65,8 @@ export class PlayerService {
   findPlayer(uid: string) {
     return this.database.object('players/' + uid)
   }
+
+  getActionText() {
+
+  }
 }

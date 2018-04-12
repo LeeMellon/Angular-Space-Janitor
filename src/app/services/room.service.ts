@@ -29,4 +29,8 @@ export class RoomService {
   updateScene(key, value){
     this.scenes.update(key, {current: value});
   }
+
+  getActionText(roomNumber, sceneNumber, actionNumber) {
+    return this.rooms[0].scene[0].actionOption[0].text
+  }
 }
