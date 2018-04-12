@@ -74,7 +74,7 @@ export class Room000Component implements OnInit {
     });
   }
 
-  changeScene(scene, actionType) {
+  changeScene(scene) {
     console.log("room number" , this.sceneToDisplay[1].$value)
     console.log("scene number" , this.sceneToDisplay[0].$value)
     if ((this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption) && ((this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].change) !== "XXX")){

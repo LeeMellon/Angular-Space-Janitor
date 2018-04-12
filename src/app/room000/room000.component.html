@@ -21,16 +21,16 @@
         <div *ngIf="move" class="move">
           <ul>
             <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[0]?.option">
-              <li (click)="changeRoom(0)" (click)="changeScene(0, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[0]?.option}}</li>
+              <li (click)="changeRoom(0)" (click)="changeScene(0)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[0]?.option}}</li>
             </div>
             <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[1]?.option">
-              <li (click)="changeRoom(1)" (click)="changeScene(1, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[1]?.option}}</li>
+              <li (click)="changeRoom(1)" (click)="changeScene(1)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[1]?.option}}</li>
             </div>
             <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[2]?.option">
-              <li (click)="changeRoom(2)" (click)="changeScene(2, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[2]?.option}}</li>
+              <li (click)="changeRoom(2)" (click)="changeScene(2)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[2]?.option}}</li>
             </div>
             <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[3]?.option">
-              <li (click)="changeRoom(3)" (click)="changeScene(3, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[3]?.option}}</li>
+              <li (click)="changeRoom(3)" (click)="changeScene(3)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[3]?.option}}</li>
             </div>
             <li (click)="actionOptions()">Interact</li>
           </ul>
@@ -39,16 +39,16 @@
           <ul>
             <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption">
               <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[0]?.option">
-                <li (click)="changeScene(0, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[0]?.option}}</li>
+                <li (click)="changeScene(0)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[0]?.option}}</li>
               </div>
               <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[1]?.option">
-                <li (click)="changeScene(1, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[1]?.option}}</li>
+                <li (click)="changeScene(1)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[1]?.option}}</li>
               </div>
               <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[2]?.option">
-                <li (click)="changeScene(2, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[2]?.option}}</li>
+                <li (click)="changeScene(2)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[2]?.option}}</li>
               </div>
               <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[3]?.option">
-                <li (click)="changeScene(3, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[3]?.option}}</li>
+                <li (click)="changeScene(3)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[3]?.option}}</li>
               </div>
             </div>
             <div *ngIf="!roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption">
