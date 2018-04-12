@@ -92,7 +92,8 @@ export class Room000Component implements OnInit {
       this.roomService.updateScene(Id, scene);
     }
     this.actionText = true;
-    $('#actionTextDisplay').text(this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].text)
+    let innerText = this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].text;
+    $('#actionTextDisplay').text(innerText)
     console.log(this.roomToDisplay.scene[this.sceneToDisplay[0].$value].actionOption[scene].text)
   }
 
