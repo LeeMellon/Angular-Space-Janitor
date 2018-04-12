@@ -4,4 +4,5 @@
 
 .player-card li {
   list-style: none;
+  padding-right: 2vh;
 }

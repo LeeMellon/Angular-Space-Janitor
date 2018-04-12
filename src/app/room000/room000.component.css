@@ -1,3 +1,28 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .display {
   padding-left: 10%;
   padding-right: 10%;
@@ -35,7 +60,7 @@
   font-size: 1.2em;
   color: #FFD52D;
   background-color: rgba(0, 0, 0, 0.8);
-
+  overflow: scroll;
 }
 
 .display-bot {
@@ -51,6 +76,7 @@
   padding-left: 12vw;
   padding-right: 10vw;
   text-align: center;
+  padding-bottom: 30px;;
 }
 
 .action-button {
