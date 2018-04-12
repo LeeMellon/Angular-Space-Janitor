@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { PlayerService } from '../services/player.service';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
     providers: [PlayerService]
 })
 export class LoginComponent implements OnInit {
+  user;
 
   constructor(
     private router: Router,
@@ -23,9 +25,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngDoCheck() {
+    this.user = firebase.auth().currentUser;
+  }
+
   loginEmail(account, password){
     let email = account + "@spacejanitor.com"
-    this.playerService.loginEmail(email, password);
+    this.playerService.loginEmail(email, password)
+    if (this.user) {
+      this.router.navigate(['']);
+    }
   }
 
   logoutEmail() {

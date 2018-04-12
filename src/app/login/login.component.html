@@ -1,13 +1,19 @@
 <div class="login-page">
+
+
   <div class="login">
     <p>Username</p>
     <input #loginUser type="text" name="" value="" minlength=1>
     <p>Password</p>
     <input #loginPass type="text" placeholder="password" minlength=6>
+
+
     <div class="submit">
       <button class="submit-button" (click)="loginEmail(loginUser.value, loginPass.value)">Login</button>
     </div>
   </div>
+
+
   <div class="createAccount">
     <div >
      <button class="create-button" routerLink="/create">Create new account</button>

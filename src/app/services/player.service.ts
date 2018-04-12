@@ -38,7 +38,7 @@ export class PlayerService {
       console.log(`message`, err.message);
       console.log(`name`, err.name);
       console.log(`stack`, err.stack);
-    });
+    })//XXX XXX XXX.then() can I use this here? XXX XXX XXX
   }
 
   logoutEmail(){
