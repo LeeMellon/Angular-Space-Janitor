@@ -6,6 +6,7 @@ import { LogComponent } from './log/log.component';
 import { PlayerComponent } from './player/player.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AuthGuard } from './services/auth-guard.service.service'
 
 const appRoutes: Routes = [
   {
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
   },
   {
   path: 'rooms/:dest',
-  component: Room000Component
+  component: Room000Component,
+  canActivate: [AuthGuard]
   }
 ];
 
