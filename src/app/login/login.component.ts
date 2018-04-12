@@ -5,7 +5,6 @@ import { FirebaseListObservable } from 'angularfire2/database';
 import { PlayerService } from '../services/player.service';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
-import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +12,7 @@ import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angula
   styleUrls: ['./login.component.css'],
     providers: [PlayerService]
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent {
   user;
   private isLoggedIn: Boolean;
   errorMessage;
@@ -35,10 +34,6 @@ export class LoginComponent implements OnInit{
         console.log("logged in");
       }
     });
-  }
-
-  ngOnInit() {
-
   }
 
   ngDoCheck() {
