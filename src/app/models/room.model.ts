@@ -6,5 +6,3 @@ export class Room {
     scenes: any[],
   ){}
 }
-
-// room[1].scenes[1].actionOptions.a.text
