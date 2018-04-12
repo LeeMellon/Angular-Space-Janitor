@@ -1,17 +1,29 @@
 .login-page {
   text-align: center;
-  padding-top: 10vh;
+  background-image: url('https://media.giphy.com/media/12FPJ1mfrAkvza/giphy.gif');
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  color: #afffaf;
 }
 
 .submit-button {
   margin-top: 1vh;
-  background-color: #efefef;
+  background-color: #afffaf;
 }
 
-.createAccount {
+.create-button {
   background-color: #ffafaf;
 }
 
+.createAccount {
+  margin-top: 10vh;
+  /*background-color: #ffafaf;*/
+  height: 10vh;
+}
+
 .login {
-  background-color: #afffaf;
+  /*background-color: #afffaf;*/
+  padding-top: 30vh;
+  padding-bottom: 5vh;
 }

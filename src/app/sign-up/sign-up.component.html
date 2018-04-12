@@ -3,7 +3,7 @@
     <p>Username</p>
     <input #createUser type="text" name="" value="">
     <p><span *ngIf="usernameError">enter a valid username</span></p>
-    
+
     <p>Password</p>
     <input #createPass type="text" name="" value="">
     <p class="error-message"><span *ngIf="passError">password must be longer than 6 characters</span></p>
@@ -11,6 +11,11 @@
 
     <div class="submit">
       <button class="submit-button" (click)="createAccount(createUser.value, createPass.value)">Create new account</button>
+    </div>
+    <div class="login">
+      <div >
+       <button class="login-button" routerLink="/login">Back to login</button>
+      </div>
     </div>
   </div>
 </div>
