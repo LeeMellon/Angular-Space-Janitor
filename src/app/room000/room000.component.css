@@ -1,26 +1,26 @@
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #666;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 .display {
@@ -56,6 +56,11 @@
 }
 
 .display-mid {
+  padding: 5vh;
+  border-style: solid;
+  border-color: #FFD52D;
+  border-top-right-radius: 10%;
+  border-top-left-radius: 10%;
   min-height: 40vh;
   font-size: 1.2em;
   color: #FFD52D;
@@ -64,6 +69,8 @@
 }
 
 .display-bot {
+  border-bottom-right-radius: 30%;
+  border-bottom-left-radius: 30%;
   border-style: solid;
   min-height: 20vh;
   background-color: rgba(55, 35, 35, 0.8);
