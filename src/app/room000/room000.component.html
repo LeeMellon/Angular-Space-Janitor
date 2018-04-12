@@ -1,79 +1,64 @@
-{{roomToDisplay?.name}}
-{{roomToDisplay?.id}}
-<!-- Scene key {{sceneToDisplay[1]?.$value}} -->
-<!-- Scene value {{sceneToDisplay[0]?.$value}} -->
-<!-- <div *ngFor='let room of rooms'> -->
-  <div class="display card">
+{{roomToDisplay?.name}} {{roomToDisplay?.id}}
 
-    <div class="display-top row">
-      <!-- <div *ngIf="room.name === currentRoom"> -->
-        {{roomToDisplay?.name}}
-      <!-- </div> -->
+<div class="display card">
+
+  <div class="display-top row">
+    {{roomToDisplay?.name}}
+  </div>
+
+  <div class="display-mid row">
+    <p class="display-text">
+      {{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.text}}
+    </p>
+  </div>
+
+  <div class="display-bot row">
+    <div class="col-sm-3 card">
+      <app-player></app-player>
     </div>
-
-    <div class="display-mid row">
-      <!-- <div *ngIf="room.name === currentRoom"> -->
-        <p class="display-text">
-          {{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.text}}
-        </p>
-      <!-- </div> -->
-    </div>
-
-    <div class="display-bot row">
-      <div class="col-sm-3 card">
-        <app-player></app-player>
-      </div>
-      <div class="col-sm-6 card">
-        <!-- <div *ngIf="room.name === currentRoom">
-          <div *ngFor='let scene of scenes'> -->
-            <div class="options">
-              <div *ngIf="move" class="move">
-                <ul>
-                  <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[0]?.option">
-                    <li (click)="changeRoom(0)" (click)="changeScene(0, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[0]?.option}}</li>
-                  </div>
-                  <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[1]?.option">
-                    <li (click)="changeRoom(1)" (click)="changeScene(1, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[1]?.option}}</li>
-                  </div>
-                  <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[2]?.option">
-                    <li (click)="changeRoom(2)" (click)="changeScene(2, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[2]?.option}}</li>
-                  </div>
-                  <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[3]?.option">
-                    <li (click)="changeRoom(3)" (click)="changeScene(3, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[3]?.option}}</li>
-                  </div>
-                  <li (click)="actionOptions()">Interact</li>
-                </ul>
+    <div class="col-sm-6 card">
+      <div class="options">
+        <div *ngIf="move" class="move">
+          <ul>
+            <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[0]?.option">
+              <li (click)="changeRoom(0)" (click)="changeScene(0, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[0]?.option}}</li>
+            </div>
+            <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[1]?.option">
+              <li (click)="changeRoom(1)" (click)="changeScene(1, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[1]?.option}}</li>
+            </div>
+            <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[2]?.option">
+              <li (click)="changeRoom(2)" (click)="changeScene(2, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[2]?.option}}</li>
+            </div>
+            <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[3]?.option">
+              <li (click)="changeRoom(3)" (click)="changeScene(3, moveOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.moveOption[3]?.option}}</li>
+            </div>
+            <li (click)="actionOptions()">Interact</li>
+          </ul>
+        </div>
+        <div *ngIf="!move" class="interact">
+          <ul>
+            <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption">
+              <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[0]?.option">
+                <li (click)="changeScene(0, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[0]?.option}}</li>
               </div>
-              <div *ngIf="!move" class="interact">
-                <ul>
-                  <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption">
-                    <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[0]?.option">
-                      <li (click)="changeScene(0, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[0]?.option}}</li>
-                    </div>
-                    <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[1]?.option">
-                      <li (click)="changeScene(1, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[1]?.option}}</li>
-                    </div>
-                    <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[2]?.option">
-                      <li (click)="changeScene(2, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[2]?.option}}</li>
-                    </div>
-                    <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[3]?.option">
-                      <li (click)="changeScene(3, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[3]?.option}}</li>
-                    </div>
-                  </div>
-                  <div *ngIf="!roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption">
-                    <li>Nothing to do here</li>
-                  </div>
-                  <li (click)="moveOptions()">Move around</li>
-                </ul>
+              <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[1]?.option">
+                <li (click)="changeScene(1, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[1]?.option}}</li>
+              </div>
+              <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[2]?.option">
+                <li (click)="changeScene(2, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[2]?.option}}</li>
+              </div>
+              <div *ngIf="roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[3]?.option">
+                <li (click)="changeScene(3, actionOption)">{{roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption[3]?.option}}</li>
               </div>
             </div>
-          <!-- </div> -->
-        <!-- </div> -->
+            <div *ngIf="!roomToDisplay?.scene[sceneToDisplay[0]?.$value]?.actionOption">
+              <li>Nothing to do here</li>
+            </div>
+            <li (click)="moveOptions()">Move around</li>
+          </ul>
+        </div>
       </div>
-      <div class="col-sm-3 card">
-        <app-log></app-log>
-      </div>
-    <!-- </div>
-
-  </div>
-</div> -->
+    </div>
+    <div class="col-sm-3 card">
+      <app-log></app-log>
+    </div>

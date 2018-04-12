@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./room000.component.css'],
   providers: [RoomService]
 })
+
 export class Room000Component implements OnInit {
   roomId: string;
   roomToDisplay;
