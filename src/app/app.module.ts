@@ -14,6 +14,8 @@ import { TestDatabaseComponent } from './test-database/test-database.component';
 import { Room000Component } from './room000/room000.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { PlayerService } from './services/player.service';
+import { AuthGuard } from './services/auth-guard.service.service';
 
 
 export const firebaseConfig = {
@@ -41,7 +43,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
   ],
-  providers: [AngularFireAuth],
+  providers: [AuthGuard, AngularFireAuth, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
